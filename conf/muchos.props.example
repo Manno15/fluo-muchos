@@ -30,7 +30,7 @@ install_dir = %(user_home)s/install
 # from your machine. Hostname can be chosen from "nodes" section below.
 proxy_hostname = leader1
 # If set, a SOCKS proxy will be created on the specified port when connecting to proxy using 'muchos ssh <cluster>'
-#proxy_socks_port = 38585
+proxy_socks_port = 38585
 # Accumulo Instance name
 accumulo_instance = muchos
 # Accumluo Password
@@ -41,15 +41,15 @@ zookeeper_version = 3.4.14
 spark_version = 2.3.2
 fluo_version = 1.2.0
 fluo_yarn_version = 1.0.0
-accumulo_version = 2.0.0
+accumulo_version = 2.1.0-SNAPSHOT
 # Specifies if software should be downloaded. If 'False', tarballs of the software above should be in conf/upload/
 download_software = True
 # Install Hub (for GitHub)
 install_hub = True
 # The java package to install
-java_package=java-1.8.0-openjdk-devel
+#java_package=java-1.8.0-openjdk-devel
 # The package to use for java 11
-# java_package=java-11-openjdk-devel
+ java_package=java-11-openjdk-devel
 # Please read the High-Availability section of the README before switching to 'True' 
 hdfs_ha = False
 # Give a logical name for the cluster, all one word no special characters. Required to support HDFS HA.
@@ -60,7 +60,7 @@ nameservice_id = muchoshacluster
 # You may need to change this value if a new image has been released or you are running in a different region.
 # Before using this AMI, subscribe to it on the CentOS product page below or launching will fail:
 #   https://aws.amazon.com/marketplace/pp/B00O7WM7QW
-aws_ami = ami-9887c6e7
+aws_ami = ami-02eac2c0129f6376b
 # Type of AWS instance launched by default
 default_instance_type = m5d.large
 # Type of AWS instance launched for any node running 'worker' service
@@ -79,7 +79,7 @@ worker_instance_type = %(default_instance_type)s
 # You can upload and name your public key using the EC2 Management Console.
 # Only the user with this key will be able to SSH to the cluster.
 # Name below should be your 'Key pair name' in EC2 and not name of your public key file.
-key_name = my_aws_key
+key_name = JeffreyM_Key
 # Type of filesystem to format instance storage as.
 fstype = ext3
 # Force formatting of instance devices, even when it has an existing filesystem.
@@ -248,5 +248,5 @@ leader1 = namenode,resourcemanager,accumulomaster,zookeeper
 leader2 = metrics
 worker1 = worker,swarmmanager
 worker2 = worker
-worker3 = worker
-worker4 = worker
+#worker3 = worker
+#worker4 = worker
